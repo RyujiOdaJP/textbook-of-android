@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">リスト選択サンプル</string>
+    <string-array name="lv_menu">
+        <item>A Lunch</item>
+        <item>B Lunch</item>
+        <item>C Lunch</item>
+        <item>D Lunch</item>
+        <item>E Lunch</item>
+        <item>F Lunch</item>
+        <item>G Lunch</item>
+        <item>H Lunch</item>
+        <item>I Lunch</item>
+        <item>J Lunch</item>
+    </string-array>
+</resources>
