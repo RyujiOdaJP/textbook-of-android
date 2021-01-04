@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val lvMenu = findViewById<ListView>(R.id.lvMenu)
-        var menuList = mutableListOf<String>(
+        var menuList = mutableListOf(
                 "唐揚げ定食",
                 "ハンバーグ定食",
                 "唐揚げ定食",
