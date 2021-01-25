@@ -10,9 +10,9 @@ fun main() {
     var firstChar: Char = myStr[0]
     var lastChar: Char = myStr[myStr.length - 1]
 
-    println("last character is " +  lastChar) // d
+    println("last character is " + lastChar) // d
 
     var result = 5 + 4
-    result /= 2 // assign new value into result as result = result /2
+    result /= 2.0.toInt() // assign new value into result as result = result /2
     print(result)
 }
