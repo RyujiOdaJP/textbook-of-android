@@ -14,5 +14,9 @@ fun main() {
 
     var result = 5 + 4
     result /= 2.0.toInt() // assign new value into result as result = result /2
-    print(result)
+    println(result)
+
+    var myNum = 10
+    println(myNum++) // increase num by 1 after a row is executed
+    println(++myNum) // increase num by 1 before a row is executed
 }
