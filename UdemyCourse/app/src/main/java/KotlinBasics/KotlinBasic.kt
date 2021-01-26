@@ -19,4 +19,10 @@ fun main() {
     var myNum = 10
     println(myNum++) // increase num by 1 after a row is executed
     println(++myNum) // increase num by 1 before a row is executed
+
+    var x: Any = "string"
+    when (x){
+        is Int -> println("$x is Int")
+        !is Double -> println("$x is not Double")
+    }
 }
