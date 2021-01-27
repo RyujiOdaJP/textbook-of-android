@@ -5,8 +5,8 @@ fun main() {
     println(addUp(4, 3))
 
 
-    val nullAbleName: String? = "Denis"
-    nullAbleName?.let { print(it) } //safe call let{}
+    val nullableName: String? = "Denis"
+    nullableName?.let { print(it) } //safe call let{}
 }
 
 fun myFunction() {
