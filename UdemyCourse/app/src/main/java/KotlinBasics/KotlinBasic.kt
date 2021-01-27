@@ -25,4 +25,11 @@ fun main() {
         is Int -> println("$x is Int")
         !is Double -> println("$x is not Double")
     }
+
+    x = 15
+    do{
+        println(x)
+        x++
+    } while (x <=20)
+    println("while loop is done")
 }
