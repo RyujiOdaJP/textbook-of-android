@@ -21,23 +21,27 @@ fun main() {
     println(++myNum) // increase num by 1 before a row is executed
 
     var x: Any = "string"
-    when (x){
+    when (x) {
         is Int -> println("$x is Int")
         !is Double -> println("$x is not Double")
     }
 
     x = 15
-    do{
+    do {
         println(x)
         x++
-    } while (x <=20)
+    } while (x <= 20)
     println("while loop is done")
 
-    for(i in 1 until 10) {
+    for (i in 1 until 10) {
         print(i)
     }
 
-    for(j in 10 downTo 1){
+    for (j in 10 downTo 1) {
         print(j)
+    }
+
+    for (num in 0 until 10000) {
+        if(num == 9001) println("It's over 9000")
     }
 }
