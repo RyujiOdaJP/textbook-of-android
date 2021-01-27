@@ -32,4 +32,12 @@ fun main() {
         x++
     } while (x <=20)
     println("while loop is done")
+
+    for(i in 1 until 10) {
+        print(i)
+    }
+
+    for(j in 10 downTo 1){
+        print(j)
+    }
 }
