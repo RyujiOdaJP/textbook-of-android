@@ -9,7 +9,7 @@ fun main() {
     println("maxSpeed is ${myCar.maxSpeed}")
 }
 
-class Car {
+open class Car {
     val myBrand = "BMW"
     get() { // if called getter from somewhere, return value with following statement
         return field.toLowerCase(Locale.ROOT)
