@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SimpleRecyclerView</string>
+    <array name="hoges">
+        <item>apple</item>
+        <item>banana</item>
+        <item>orange</item>
+        <item>grape</item>
+    </array>
 </resources>
