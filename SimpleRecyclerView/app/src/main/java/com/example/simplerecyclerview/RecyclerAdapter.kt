@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerAdapter(
     private val context: Context,
     private val itemClickListener: RecyclerViewHolder.ItemClickListener,
-    private val itemList: List<String>
+    private val itemList: List<RowData>
 ) : RecyclerView.Adapter<RecyclerViewHolder>() {
 
     private var mRecyclerView: RecyclerView? = null
@@ -54,8 +54,8 @@ class RecyclerAdapter(
     * 最初に表示されるときにも呼び出されるし、使いまわされるときにも呼び出される。
     */
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-        holder.titleView.text = itemList[position]
-        holder.detailView.text = itemList[position]
+        holder.titleView.text = itemList.get(position).title
+        holder.detailView.text = itemList.get(position).detail
     }
 
     /*

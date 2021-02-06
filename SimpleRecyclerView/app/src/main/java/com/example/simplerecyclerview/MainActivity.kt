@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), RecyclerViewHolder.ItemClickListener {
 
         val hoges = resources.getStringArray(R.array.hoges).toMutableList()
 
-        viewAdapter = RecyclerAdapter(this, this, hoges)
+        viewAdapter = RecyclerAdapter(this, this, . hoges)
         viewManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
