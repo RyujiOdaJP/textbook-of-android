@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewHolder.ItemClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val hoges = resources.getStringArray(R.array.hoges).toMutableList()
+//        val hoges = resources.getStringArray(R.array.hoges).toMutableList()
 
-        viewAdapter = RecyclerAdapter(this, this, . hoges)
+        viewAdapter = RecyclerAdapter(this, this, createData())
         viewManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView).apply {
@@ -37,5 +37,16 @@ class MainActivity : AppCompatActivity(), RecyclerViewHolder.ItemClickListener {
 
     override fun onItemClick(itemView: View, position: Int) {
         Toast.makeText(applicationContext, "position $position was tapped", Toast.LENGTH_SHORT).show()
+    }
+    private fun createData() : List<RowData> {
+        val dataList: MutableList<RowData> = mutableListOf()
+        for (i in 1..50) {
+            val data = RowData()
+            data.title = "No.$i"
+            data.detail = "detail $i"
+
+            dataList.add(data)
+        }
+        return dataList
     }
 }
