@@ -1,3 +1,3 @@
 package com.example.simplerecyclerview
 
-data class RowData(val title: String, val detail: String)
+data class RowData(var title: String = "", var detail: String = "")
