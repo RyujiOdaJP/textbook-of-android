@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,11 +29,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         } else {
-            Toast.makeText(
-                this,
-                "your location provider is already on.",
-                Toast.LENGTH_SHORT
-            ).show()
+            Dexter.withActivity(this)
+                .withPermissions(
+                    android.Manifest.permission.ACCESS_FINE_LOCATION,
+                    android.Manifest.permission.ACCESS_COARSE_LOCATION
+                )
+                .withListener(object: MultiplePermissionsListener {
+                    override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+                        if (report?.areAllPermissionsGranted() == true) {
+                            // TODO add requestLocationData
+                        }
+                    }
+                })
         }
     }
 
