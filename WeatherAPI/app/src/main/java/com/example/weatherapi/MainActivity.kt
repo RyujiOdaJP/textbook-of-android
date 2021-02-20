@@ -1,9 +1,11 @@
 package com.example.weatherapi
 
 import android.content.Context
+import android.content.Intent
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,17 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(
                 this,
                 "Please turn on your location provider",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            // redirect to systems settings to enable loacation
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            startActivity(intent)
+
+        } else {
+            Toast.makeText(
+                this,
+                "your location provider is already on.",
                 Toast.LENGTH_SHORT
             ).show()
         }
