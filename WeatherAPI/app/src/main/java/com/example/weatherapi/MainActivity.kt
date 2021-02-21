@@ -9,6 +9,8 @@ import android.provider.Settings
 import android.widget.Toast
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import java.util.jar.Manifest
 
@@ -38,9 +40,26 @@ class MainActivity : AppCompatActivity() {
                     override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
                         if (report?.areAllPermissionsGranted() == true) {
                             // TODO add requestLocationData
+
+                        }
+
+                        if (report?.isAnyPermissionPermanentlyDenied == true) {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "You have denied location permission, it's mandatory to work this application",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
-                })
+
+                    override fun onPermissionRationaleShouldBeShown(
+                        permissions: MutableList<PermissionRequest>?,
+                        token: PermissionToken?
+                    ) {
+                        TODO("Not yet implemented")
+                    }
+                }).onSameThread()
+                .check()
         }
     }
 
