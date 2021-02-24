@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 .withListener(object : MultiplePermissionsListener {
                     override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
                         if (report?.areAllPermissionsGranted() == true) {
-                            // TODO add requestLocationData
+                            requestLocationData()
 
                         }
 
@@ -62,8 +62,7 @@ class MainActivity : AppCompatActivity() {
                         permissions: MutableList<PermissionRequest>?,
                         token: PermissionToken?
                     ) {
-                        TODO("Not yet implemented")
-                    }
+                        showRationalDialogForPermissions()                    }
                 }).onSameThread()
                 .check()
         }
@@ -95,6 +94,10 @@ class MainActivity : AppCompatActivity() {
 
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+
+    }
+
+    private fun requestLocationData() {
 
     }
 }
