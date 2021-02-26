@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -18,6 +19,8 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mFusedLocationClient: FusedLocationProviderClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
