@@ -3,26 +3,38 @@ package com.example.udemycourse
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.TextView
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainViewModel : ViewModel() {
+    var count: Int = 0
+}
+
+class MainActivity : AppCompatActivity() {
 
     private lateinit var textView: TextView
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("MainActivity", "onCreate state:" + lifecycle.currentState)
 
-        textView = findViewById<TextView>(R.id.text)
+        textView = findViewById(R.id.text)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        textView.text = viewModel.count.toString()
         textView.setOnClickListener {
-            textView.text = (textView.text.toString().toInt() + 1).toString()
+            viewModel.count++
+            textView.text = viewModel.count.toString()
         }
 
-        if (savedInstanceState != null) {
-            textView.text = savedInstanceState.getString("count")
-        }
+//        if (savedInstanceState != null) {
+//            textView.text = savedInstanceState.getString("count")
+//        }
+
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -58,10 +70,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("MainActivity", "onDestroy state:"+lifecycle.currentState)
-    }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
     }
 
 }
