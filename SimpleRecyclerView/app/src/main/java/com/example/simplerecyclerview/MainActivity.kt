@@ -38,6 +38,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewHolder.ItemClickListener {
 
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
+
+            directions = MainActivityDirections
         }
     }
 
