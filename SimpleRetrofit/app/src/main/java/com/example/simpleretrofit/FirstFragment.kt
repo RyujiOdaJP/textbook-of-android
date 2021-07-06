@@ -17,7 +17,8 @@ class FirstFragment : Fragment() {
 * 逆に、ビュー バインディングには、データ バインディングに比べて次のような制約があります。
 * ビュー バインディングはレイアウト変数またはレイアウト式に対応していないため、動的 UI コンテンツを XML レイアウト ファイルから直接宣言できません。
 * ビュー バインディングは双方向データ バインディングに対応していません。
-* 現在のFragmentFirstBindingはデータバインディング（xmlで<data>を定義している）
+* 現在のFragmentFirstBindingはViewDataBindingを継承（xmlで<data>を定義している）
+* <data>を定義しなければViewBindingを継承。
 * */
     override fun onCreateView(
         inflater: LayoutInflater,
