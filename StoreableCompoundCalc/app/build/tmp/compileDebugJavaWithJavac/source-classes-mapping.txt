@@ -1,0 +1,2 @@
+com/example/storeablecompoundcalc/BuildConfig.java
+ com.example.storeablecompoundcalc.BuildConfig
